@@ -758,6 +758,7 @@ class CompressionGUI:
         )
         if not path:
             return
+        
 
         try:
             bmp = GrayscaleBMP256()
