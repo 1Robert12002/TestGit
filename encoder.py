@@ -70,6 +70,16 @@ def decode(encoded_text, codes):
 
 
 def compression_ratio(original, encoded):
+    """Calculate compression ratio.
+
+    Args:
+        original: original string (each character assumed to be 8 bits / 1 byte).
+        encoded: bit-string of '0'/'1' characters where len(encoded) equals the
+                 number of encoded bits (not bytes), allowing a direct comparison
+                 with the original bit count.
+    Returns:
+        Float in [0, 1) representing the fraction of bits saved (1.0 = perfect).
+    """
     original_bits = len(original) * 8
     encoded_bits = len(encoded)
     if original_bits == 0:
